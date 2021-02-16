@@ -1,6 +1,7 @@
 import os
 from create_parking_lot import create_parking_lot
 from park import park
+from leave import leave
 
 
 class Solution:
@@ -24,6 +25,13 @@ class Solution:
                 self.currently_parked = park(
                         cmd[1], cmd[2], self.cars_arrived,
                         self.cars_parked, self.currently_parked)
+            else:
+                print("Invalid command")
+                return
+
+        elif cmd[0] == "leave":
+            if len(cmd) == 2:
+                self.currently_parked = leave(cmd[1], self.currently_parked)
             else:
                 print("Invalid command")
                 return
