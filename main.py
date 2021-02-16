@@ -2,6 +2,11 @@ import os
 from create_parking_lot import create_parking_lot
 from park import park
 from leave import leave
+# from query import *
+from query import status
+from query import registration_numbers_for_cars_with_colour
+from query import slot_numbers_for_cars_with_colour
+from query import slot_number_for_cars_with_registration_number
 
 
 class Solution:
@@ -58,6 +63,11 @@ class Solution:
             else:
                 print("invalid command")
                 return
+
+        elif cmd[0] == "slot_number_for_cars_with_registration_number":
+            if len(cmd) == 2:
+                slot_number_for_cars_with_registration_number(
+                    cmd[1], self.cars_parked)
 
 
 if __name__ == "__main__":

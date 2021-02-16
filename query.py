@@ -40,7 +40,7 @@ def slot_numbers_for_cars_with_colour(color, currently_parked):
     print(temp[-1])
 
 
-def slot_number_for_registration_number(registration_no, currently_parked):
+def slot_number_for_cars_with_registration_number(registration_no, currently_parked):
     temp = []
     for key, value in currently_parked.items():
         if value is not False: 
