@@ -1,5 +1,6 @@
 import os
 from create_parking_lot import create_parking_lot
+from park import park
 
 
 class Solution:
@@ -13,6 +14,16 @@ class Solution:
             if len(cmd) == 2:
                 self.currently_parked = create_parking_lot(
                     int(cmd[1]), self.currently_parked)
+            else:
+                print("Invalid command")
+                return
+
+        elif cmd[0] == "park":
+            if len(cmd) == 3:
+                self.cars_arrived, self.cars_parked,
+                self.currently_parked = park(
+                        cmd[1], cmd[2], self.cars_arrived,
+                        self.cars_parked, self.currently_parked)
             else:
                 print("Invalid command")
                 return
