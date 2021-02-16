@@ -23,3 +23,18 @@ def registration_numbers_for_cars_with_colour(color, cars_arrived):
     for i in temp[:len(temp) - 1]:
         print(i, end=", ")
     print(temp[-1])
+
+
+def slot_numbers_for_cars_with_colour(color, currently_parked):
+    temp = []
+    for key, value in currently_parked.items():
+        if value is not False:
+            if value[1] == color:
+                temp.append(key)
+
+    if len(temp) == 0:
+        print("Not found")
+        return
+    for i in temp[:len(temp) - 1]:
+        print(i, end=", ")
+    print(temp[-1])
