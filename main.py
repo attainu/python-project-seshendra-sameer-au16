@@ -43,6 +43,14 @@ class Solution:
                 print("Invalid command")
                 return
 
+        elif cmd[0] == "registration_numbers_for_cars_with_colour":
+            if len(cmd) == 2:
+                registration_numbers_for_cars_with_colour(
+                    cmd[1], self.cars_arrived)
+            else:
+                print("Invalid command")
+                return
+
 
 if __name__ == "__main__":
     s = Solution()
