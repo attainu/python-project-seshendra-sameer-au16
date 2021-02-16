@@ -6,7 +6,7 @@ def status(currently_parked):
     for key, value in currently_parked.items():
         if value is not False:
             vals.append([key, value[0], value[1]])
-    headers = ['slot', 'reg_no', 'color']
+    headers = ['slot', 'registration_no', 'color']
 
     print(tabulate(vals, headers))
 

@@ -26,8 +26,7 @@ class Solution:
 
         elif cmd[0] == "park":
             if len(cmd) == 3:
-                self.cars_arrived, self.cars_parked,
-                self.currently_parked = park(
+                self.cars_arrived, self.cars_parked, self.currently_parked = park(
                         cmd[1], cmd[2], self.cars_arrived,
                         self.cars_parked, self.currently_parked)
             else:
@@ -36,7 +35,7 @@ class Solution:
 
         elif cmd[0] == "leave":
             if len(cmd) == 2:
-                self.currently_parked = leave(cmd[1], self.currently_parked)
+                self.currently_parked = leave(int(cmd[1]), self.currently_parked)
             else:
                 print("Invalid command")
                 return
@@ -67,7 +66,10 @@ class Solution:
         elif cmd[0] == "slot_number_for_cars_with_registration_number":
             if len(cmd) == 2:
                 slot_number_for_cars_with_registration_number(
-                    cmd[1], self.cars_parked)
+                    cmd[1], self.currently_parked)
+            else:
+                print("invalid command")
+                return
 
 
 if __name__ == "__main__":
@@ -79,16 +81,16 @@ if __name__ == "__main__":
         elif cmd == "exit":
             break
         elif cmd.endswith(".txt"):
-            try:
-                with open(cmd) as textfile:
-                    for line in textfile:
-                        line = line.rstrip("\n")
-                        s.solve(line.strip().split())
-                break
-            except:
-                continue
+            # try:
+            with open(cmd) as textfile:
+                for line in textfile:
+                    line = line.rstrip("\n")
+                    s.solve(line.strip().split())
+            break
+            # except:
+            #     continue
         else:
-            try:
-                s.solve(cmd.strip().split())
-            except:
-                continue
+            # try:
+            s.solve(cmd.strip().split())
+            # except:
+                # continue
