@@ -51,6 +51,14 @@ class Solution:
                 print("Invalid command")
                 return
 
+        elif cmd[0] == "slot_numbers_for_cars_with_colour":
+            if len(cmd) == 2:
+                slot_numbers_for_cars_with_colour(
+                    cmd[1], self.currently_parked)
+            else:
+                print("invalid command")
+                return
+
 
 if __name__ == "__main__":
     s = Solution()
