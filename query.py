@@ -11,7 +11,7 @@ def status(currently_parked):
     print(tabulate(vals, headers))
 
 
-def registration_numbers_for_cars_with_colour(color, cars_arrived):
+def registration_numbers_for_cars_with_color(color, cars_arrived):
     temp = []
     for i in cars_arrived:
         if i[1] == color:
@@ -25,7 +25,7 @@ def registration_numbers_for_cars_with_colour(color, cars_arrived):
     print(temp[-1])
 
 
-def slot_numbers_for_cars_with_colour(color, currently_parked):
+def slot_numbers_for_cars_with_color(color, currently_parked):
     temp = []
     for key, value in currently_parked.items():
         if value is not False:

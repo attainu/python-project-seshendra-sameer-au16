@@ -4,8 +4,8 @@ from park import park
 from leave import leave
 # from query import *
 from query import status
-from query import registration_numbers_for_cars_with_colour
-from query import slot_numbers_for_cars_with_colour
+from query import registration_numbers_for_cars_with_color
+from query import slot_numbers_for_cars_with_color
 from query import slot_number_for_cars_with_registration_number
 
 
@@ -47,17 +47,17 @@ class Solution:
                 print("Invalid command")
                 return
 
-        elif cmd[0] == "registration_numbers_for_cars_with_colour":
+        elif cmd[0] == "registration_numbers_for_cars_with_color":
             if len(cmd) == 2:
-                registration_numbers_for_cars_with_colour(
+                registration_numbers_for_cars_with_color(
                     cmd[1], self.cars_arrived)
             else:
                 print("Invalid command")
                 return
 
-        elif cmd[0] == "slot_numbers_for_cars_with_colour":
+        elif cmd[0] == "slot_numbers_for_cars_with_color":
             if len(cmd) == 2:
-                slot_numbers_for_cars_with_colour(
+                slot_numbers_for_cars_with_color(
                     cmd[1], self.currently_parked)
             else:
                 print("invalid command")
@@ -81,16 +81,16 @@ if __name__ == "__main__":
         elif cmd == "exit":
             break
         elif cmd.endswith(".txt"):
-            # try:
-            with open(cmd) as textfile:
-                for line in textfile:
-                    line = line.rstrip("\n")
-                    s.solve(line.strip().split())
-            break
-            # except:
-            #     continue
+            try:
+                with open(cmd) as textfile:
+                    for line in textfile:
+                        line = line.rstrip("\n")
+                        s.solve(line.strip().split())
+                break
+            except:
+                continue
         else:
-            # try:
-            s.solve(cmd.strip().split())
-            # except:
-                # continue
+            try:
+                s.solve(cmd.strip().split())
+            except:
+                continue
