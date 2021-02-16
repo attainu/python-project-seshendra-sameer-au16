@@ -36,6 +36,13 @@ class Solution:
                 print("Invalid command")
                 return
 
+        elif cmd[0] == "status":
+            if len(cmd) == 1:
+                status(self.currently_parked)
+            else:
+                print("Invalid command")
+                return
+
 
 if __name__ == "__main__":
     s = Solution()
