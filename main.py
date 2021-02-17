@@ -2,7 +2,6 @@ import os
 from create_parking_lot import create_parking_lot
 from park import park
 from leave import leave
-# from query import *
 from query import status
 from query import registration_numbers_for_cars_with_color
 from query import slot_numbers_for_cars_with_color
